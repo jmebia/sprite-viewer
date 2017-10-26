@@ -1,0 +1,47 @@
+
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+
+<GridPane fx:controller="app.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <Button fx:id="buttonOpenFile" text="Open File.." GridPane.rowIndex="0" />
+
+    <Label text="Height" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <Label text="Width" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <Label text="Columns" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+    <TextField fx:id="textHeight" promptText="H" maxWidth="40" GridPane.columnIndex="1"
+               GridPane.rowIndex="1"/>
+
+    <TextField fx:id="textWidth" promptText="W" maxWidth="40" GridPane.columnIndex="1"
+               GridPane.rowIndex="2"/>
+
+    <TextField fx:id="textCol" promptText="Col" maxWidth="40" GridPane.columnIndex="1"
+               GridPane.rowIndex="3" />
+
+    <StackPane GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="4" style="-fx-background-color: grey">
+        <Canvas fx:id="canvas" width="160" height="160"/>
+    </StackPane>
+
+    <HBox GridPane.columnIndex="2" GridPane.rowIndex="5" alignment="CENTER" spacing="10">
+        <Button fx:id="buttonPrev" text="prev" />
+
+        <HBox alignment="CENTER" spacing="3">
+            <Label fx:id="labelCurrentIndex" text="0" />
+            <Label text="/" />
+            <Label fx:id="labelMaxIndex" text="0" />
+        </HBox>
+
+        <Button fx:id="buttonNext" text="next" />
+    </HBox>
+
+</GridPane>
