@@ -12,6 +12,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
 
 
 public class Controller {
@@ -42,14 +43,20 @@ public class Controller {
                 = new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png");
 
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Spritesheet File");
+        fileChooser.setTitle("Open Spritesheet File (*.jpg, *.png)");
         fileChooser.getExtensionFilters().add(imageFilter);
         File file = fileChooser.showOpenDialog(stage);
 
-        Image image = new Image(file.toURI().toString());
+        try {
 
-        vm = new ViewerModel(image, Integer.parseInt(textHeight.getText()), Integer.parseInt(textWidth.getText()),
-                Integer.parseInt(textCol.getText()));
+            Image image = new Image(file.toURI().toString());
+
+            vm = new ViewerModel(image, Integer.parseInt(textHeight.getText()), Integer.parseInt(textWidth.getText()),
+                    Integer.parseInt(textCol.getText()));
+            
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
 
     }
 
