@@ -7,8 +7,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.Menu?>
 
 <GridPane fx:controller="app.Controller" fx:id="gridPane"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
@@ -33,7 +31,7 @@
     </StackPane>
 
     <HBox GridPane.columnIndex="2" GridPane.rowIndex="5" alignment="CENTER" spacing="10">
-        <Button fx:id="buttonPrev" text="prev" />
+        <Button fx:id="buttonPrev" text="prev" onAction="#prevView" />
 
         <HBox alignment="CENTER" spacing="3">
             <Label fx:id="labelCurrentIndex" text="0" />
@@ -41,7 +39,7 @@
             <Label fx:id="labelMaxIndex" text="0" />
         </HBox>
 
-        <Button fx:id="buttonNext" text="next" />
+        <Button fx:id="buttonNext" text="next" onAction="#nextView" />
     </HBox>
 
 </GridPane>

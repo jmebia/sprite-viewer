@@ -64,6 +64,7 @@ public class Controller {
 
         } catch (NullPointerException exception) {
 
+            exception.printStackTrace();
         }
     }
 
@@ -78,6 +79,7 @@ public class Controller {
 
         } catch (NullPointerException exception) {
 
+            exception.printStackTrace();
         }
     }
 
