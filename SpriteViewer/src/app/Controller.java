@@ -24,6 +24,7 @@ public class Controller {
     @FXML private TextField textHeight;
     @FXML private TextField textWidth;
     @FXML private TextField textCol;
+    @FXML private TextField textRow;
 
     @FXML private Canvas canvas;
 
@@ -49,7 +50,7 @@ public class Controller {
                 = new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png");
 
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Spritesheet File (*.jpg, *.png)");
+        fileChooser.setTitle("Open Spritesheet File (jpg, png)");
         fileChooser.getExtensionFilters().add(imageFilter);
         File file = fileChooser.showOpenDialog(stage);
 
