@@ -19,11 +19,8 @@
     <Label text="Row" GridPane.columnIndex="0" GridPane.rowIndex="4" />
 
     <TextField fx:id="textHeight" promptText="H" maxWidth="40" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-
     <TextField fx:id="textWidth" promptText="W" maxWidth="40" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-
     <TextField fx:id="textCol" promptText="Col" maxWidth="40" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-
     <TextField fx:id="textRow" promptText="Row" maxWidth="40" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
     <StackPane GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="5" style="-fx-background-color: grey">

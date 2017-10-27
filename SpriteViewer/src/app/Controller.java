@@ -59,13 +59,14 @@ public class Controller {
             Image image = new Image(file.toURI().toString());
 
             vm = new ViewerModel(image, Integer.parseInt(textHeight.getText()), Integer.parseInt(textWidth.getText()),
-                    Integer.parseInt(textCol.getText()));
+                    Integer.parseInt(textCol.getText()), Integer.parseInt(textRow.getText()));
 
             gc.setFill(Color.GRAY);
             gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
-            gc.drawImage(vm.getSpritesheet(), vm.getCurrentIndex() * vm.getSpriteWidth(), 0, vm.getSpriteWidth(),
-                    vm.getSpriteHeight(), 0, 0, vm.getSpriteWidth(), vm.getSpriteHeight());
+            gc.drawImage(vm.getSpritesheet(), vm.getCurrentIndex() * vm.getSpriteWidth(),
+                    vm.getSpriteHeight() * vm.getAnimRow(), vm.getSpriteWidth(), vm.getSpriteHeight(),
+                    0, 0, vm.getSpriteWidth(), vm.getSpriteHeight());
 
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -91,8 +92,9 @@ public class Controller {
             gc.setFill(Color.GRAY);
             gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
-            gc.drawImage(vm.getSpritesheet(), vm.getCurrentIndex() * vm.getSpriteWidth(), 0, vm.getSpriteWidth(),
-                    vm.getSpriteHeight(), 0, 0, vm.getSpriteWidth(), vm.getSpriteHeight());
+            gc.drawImage(vm.getSpritesheet(), vm.getCurrentIndex() * vm.getSpriteWidth(),
+                    vm.getSpriteHeight() * vm.getAnimRow(), vm.getSpriteWidth(), vm.getSpriteHeight(),
+                    0, 0, vm.getSpriteWidth(), vm.getSpriteHeight());
         }
     }
 
@@ -112,8 +114,9 @@ public class Controller {
             gc.setFill(Color.GRAY);
             gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
-            gc.drawImage(vm.getSpritesheet(), vm.getCurrentIndex() * vm.getSpriteWidth(), 0, vm.getSpriteWidth(),
-                    vm.getSpriteHeight(), 0, 0, vm.getSpriteWidth(), vm.getSpriteHeight());
+            gc.drawImage(vm.getSpritesheet(), vm.getCurrentIndex() * vm.getSpriteWidth(),
+                    vm.getSpriteHeight() * vm.getAnimRow(), vm.getSpriteWidth(), vm.getSpriteHeight(),
+                    0, 0, vm.getSpriteWidth(), vm.getSpriteHeight());
         }
     }
 
