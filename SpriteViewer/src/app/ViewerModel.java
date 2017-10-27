@@ -8,16 +8,18 @@ public class ViewerModel {
     private int spriteHeight;
     private int spriteWidth;
     private int animColumns;
+    private int animRow;
 
     private int currentIndex;
     private int maxIndex;
     private int minIndex;
 
-    public ViewerModel(Image image, int h, int w, int col) {
+    public ViewerModel(Image image, int h, int w, int col, int row) {
         spritesheet = image;
         spriteHeight = h;
         spriteWidth = w;
         animColumns = col;
+        animRow = row;
 
         minIndex = 0;
         maxIndex = col - 1;
@@ -78,5 +80,13 @@ public class ViewerModel {
 
     public void setMinIndex(int minIndex) {
         this.minIndex = minIndex;
+    }
+
+    public int getAnimRow() {
+        return animRow;
+    }
+
+    public void setAnimRow(int animRow) {
+        this.animRow = animRow;
     }
 }
