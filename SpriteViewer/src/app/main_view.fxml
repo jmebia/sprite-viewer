@@ -27,7 +27,9 @@
                GridPane.rowIndex="3" />
 
     <StackPane GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="4" style="-fx-background-color: grey">
-        <Canvas fx:id="canvas" width="160" height="160"/>
+        <Canvas fx:id="canvas" width="160" height="160">
+
+        </Canvas>
     </StackPane>
 
     <HBox GridPane.columnIndex="2" GridPane.rowIndex="5" alignment="CENTER" spacing="10">

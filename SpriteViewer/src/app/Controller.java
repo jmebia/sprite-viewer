@@ -3,11 +3,13 @@ package app;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -34,8 +36,12 @@ public class Controller {
 
     private ViewerModel vm;
 
+    private GraphicsContext gc;
+
     @FXML
     void openFile(ActionEvent e) {
+
+        gc = canvas.getGraphicsContext2D();
 
         Stage stage = (Stage) gridPane.getScene().getWindow();
 
@@ -53,10 +59,18 @@ public class Controller {
 
             vm = new ViewerModel(image, Integer.parseInt(textHeight.getText()), Integer.parseInt(textWidth.getText()),
                     Integer.parseInt(textCol.getText()));
-            
+
+            gc.setFill(Color.GRAY);
+            gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
+            gc.drawImage(vm.getSpritesheet(), vm.getCurrentIndex() * vm.getSpriteWidth(), 0, vm.getSpriteWidth(),
+                    vm.getSpriteHeight(), 0, 0, vm.getSpriteWidth(), vm.getSpriteHeight());
+
         } catch (Exception exception) {
             exception.printStackTrace();
         }
+
+
 
     }
 
@@ -72,6 +86,12 @@ public class Controller {
         } catch (NullPointerException exception) {
 
             exception.printStackTrace();
+        } finally {
+            gc.setFill(Color.GRAY);
+            gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
+            gc.drawImage(vm.getSpritesheet(), vm.getCurrentIndex() * vm.getSpriteWidth(), 0, vm.getSpriteWidth(),
+                    vm.getSpriteHeight(), 0, 0, vm.getSpriteWidth(), vm.getSpriteHeight());
         }
     }
 
@@ -87,6 +107,12 @@ public class Controller {
         } catch (NullPointerException exception) {
 
             exception.printStackTrace();
+        } finally {
+            gc.setFill(Color.GRAY);
+            gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
+            gc.drawImage(vm.getSpritesheet(), vm.getCurrentIndex() * vm.getSpriteWidth(), 0, vm.getSpriteWidth(),
+                    vm.getSpriteHeight(), 0, 0, vm.getSpriteWidth(), vm.getSpriteHeight());
         }
     }
 
